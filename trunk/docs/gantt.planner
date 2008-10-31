@@ -4,9 +4,9 @@
   <phases/>
   <calendars>
     <day-types>
-      <day-type id="0" name="Working" description="A default working day"/>
-      <day-type id="1" name="Nonworking" description="A default non working day"/>
-      <day-type id="2" name="Use base" description="Use day from base calendar"/>
+      <day-type id="0" name="Jornada laboral" description="Un d&#xED;a de trabajo predeterminado"/>
+      <day-type id="1" name="Jornada de descanso" description="Un d&#xED;a de descanso predeterminado"/>
+      <day-type id="2" name="Usar base" description="Usar d&#xED;a del calendario base"/>
     </day-types>
     <calendar id="1" name="Predeterminado">
       <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="0" sun="0"/>
@@ -20,7 +20,7 @@
     </calendar>
   </calendars>
   <tasks>
-    <task id="1" name="projecte" note="" work="3542400" start="20081015T000000Z" end="20090101T170000Z" work-start="20081015T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="1" name="projecte" note="" work="5328000" start="20081015T000000Z" end="20090107T170000Z" work-start="20081015T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <task id="2" name="proposta" note="" work="288000" start="20081015T000000Z" end="20081024T170000Z" work-start="20081015T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <constraint type="must-start-on" time="20081015T000000Z"/>
       </task>
@@ -44,74 +44,180 @@
           <predecessor id="1" predecessor-id="2" type="FS"/>
         </predecessors>
       </task>
-      <task id="7" name="estudi" note="" work="345600" start="20081024T170000Z" end="20081105T170000Z" work-start="20081025T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <task id="8" name="casos d'&#xFA;s" note="" work="86400" start="20081024T170000Z" end="20081027T170000Z" work-start="20081025T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-          <predecessors>
-            <predecessor id="1" predecessor-id="2" type="FS"/>
-          </predecessors>
+      <task id="7" name="iteraci&#xF3; 1 - clients" note="" work="1555200" start="20081024T170000Z" end="20081211T170000Z" work-start="20081025T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="8" name="estudi" note="" work="230400" start="20081024T170000Z" end="20081101T170000Z" work-start="20081025T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="9" name="casos d'&#xFA;s" note="" work="57600" start="20081024T170000Z" end="20081026T170000Z" work-start="20081025T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="2" type="FS"/>
+            </predecessors>
+          </task>
+          <task id="10" name="diagrames seq&#xFC;&#xE8;ncia" note="" work="57600" start="20081026T170000Z" end="20081028T170000Z" work-start="20081027T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="9" type="FS"/>
+            </predecessors>
+          </task>
+          <task id="11" name="diagrama classes" note="" work="115200" start="20081028T170000Z" end="20081101T170000Z" work-start="20081029T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="10" type="FS"/>
+            </predecessors>
+          </task>
         </task>
-        <task id="9" name="diagrames seq&#xFC;&#xE8;ncia" note="" work="86400" start="20081027T170000Z" end="20081030T170000Z" work-start="20081028T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="12" name="desenvolupament" note="" work="576000" start="20081101T170000Z" end="20081115T170000Z" work-start="20081102T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
           <predecessors>
+            <predecessor id="1" predecessor-id="11" type="FS"/>
             <predecessor id="1" predecessor-id="8" type="FS"/>
           </predecessors>
+          <task id="13" name="bbdd" note="" work="172800" start="20081101T170000Z" end="20081107T170000Z" work-start="20081102T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="14" name="interf&#xED;cie" note="" work="172800" start="20081101T170000Z" end="20081107T170000Z" work-start="20081102T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="15" name="funcionalitat" note="" work="230400" start="20081107T170000Z" end="20081115T170000Z" work-start="20081108T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="14" type="FS"/>
+              <predecessor id="1" predecessor-id="13" type="FS"/>
+            </predecessors>
+          </task>
         </task>
-        <task id="10" name="diagrama classes" note="" work="172800" start="20081030T170000Z" end="20081105T170000Z" work-start="20081031T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="16" name="distribuci&#xF3;" note="" work="28800" start="20081115T170000Z" end="20081116T170000Z" work-start="20081116T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
           <predecessors>
-            <predecessor id="1" predecessor-id="9" type="FS"/>
-          </predecessors>
-        </task>
-      </task>
-      <task id="11" name="desenvolupament" note="" work="1008000" start="20081105T170000Z" end="20081130T170000Z" work-start="20081106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="7" type="FS"/>
-        </predecessors>
-        <task id="12" name="bbdd" note="" work="288000" start="20081105T170000Z" end="20081115T170000Z" work-start="20081106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-        <task id="13" name="interf&#xED;cie" note="" work="288000" start="20081105T170000Z" end="20081115T170000Z" work-start="20081106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-        <task id="14" name="funcionalitat" note="" work="432000" start="20081115T170000Z" end="20081130T170000Z" work-start="20081116T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-          <predecessors>
+            <predecessor id="1" predecessor-id="15" type="FS"/>
             <predecessor id="1" predecessor-id="12" type="FS"/>
-            <predecessor id="1" predecessor-id="13" type="FS"/>
           </predecessors>
         </task>
+        <task id="17" name="refinament" note="" work="720000" start="20081116T170000Z" end="20081211T170000Z" work-start="20081117T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="16" type="FS"/>
+          </predecessors>
+          <task id="18" name="recull feedback" note="" work="288000" start="20081116T170000Z" end="20081126T170000Z" work-start="20081117T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="19" name="estudi problemes/propostes" note="" work="144000" start="20081126T170000Z" end="20081201T170000Z" work-start="20081127T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="18" type="FS"/>
+            </predecessors>
+          </task>
+          <task id="20" name="implementaci&#xF3;" note="" work="288000" start="20081201T170000Z" end="20081211T170000Z" work-start="20081202T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="19" type="FS"/>
+            </predecessors>
+          </task>
+        </task>
       </task>
-      <task id="15" name="distribuci&#xF3; beta" note="" work="28800" start="20081130T170000Z" end="20081201T170000Z" work-start="20081201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="11" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="16" name="recull feedback" note="" work="288000" start="20081201T170000Z" end="20081211T170000Z" work-start="20081202T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="15" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="17" name="refinament" note="" work="576000" start="20081211T170000Z" end="20081231T170000Z" work-start="20081212T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="21" name="iteraci&#xF3; 2 - solicituts i pressupostos" note="" work="1411200" start="20081116T170000Z" end="20090106T170000Z" work-start="20081117T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="16" type="FS"/>
         </predecessors>
-        <task id="18" name="estudi problemes/propostes" note="" work="144000" start="20081211T170000Z" end="20081216T170000Z" work-start="20081212T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-        <task id="19" name="implementaci&#xF3;" note="" work="432000" start="20081216T170000Z" end="20081231T170000Z" work-start="20081217T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="22" name="estudi" note="" work="230400" start="20081116T170000Z" end="20081124T170000Z" work-start="20081117T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="23" name="casos d'&#xFA;s" note="" work="57600" start="20081116T170000Z" end="20081118T170000Z" work-start="20081117T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="24" name="diagrames seq&#xFC;&#xE8;ncia" note="" work="57600" start="20081118T170000Z" end="20081120T170000Z" work-start="20081119T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="23" type="FS"/>
+            </predecessors>
+          </task>
+          <task id="25" name="diagrama classes" note="" work="115200" start="20081120T170000Z" end="20081124T170000Z" work-start="20081121T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="24" type="FS"/>
+            </predecessors>
+          </task>
+        </task>
+        <task id="26" name="desenvolupament" note="" work="432000" start="20081124T170000Z" end="20081205T170000Z" work-start="20081125T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
           <predecessors>
-            <predecessor id="1" predecessor-id="18" type="FS"/>
+            <predecessor id="1" predecessor-id="22" type="FS"/>
+          </predecessors>
+          <task id="27" name="bbdd" note="" work="144000" start="20081124T170000Z" end="20081129T170000Z" work-start="20081125T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="28" name="interf&#xED;cie" note="" work="115200" start="20081124T170000Z" end="20081128T170000Z" work-start="20081125T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="29" name="funcionalitat" note="" work="172800" start="20081129T170000Z" end="20081205T170000Z" work-start="20081130T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="28" type="FS"/>
+              <predecessor id="1" predecessor-id="27" type="FS"/>
+            </predecessors>
+          </task>
+        </task>
+        <task id="30" name="distribuci&#xF3;" note="" work="28800" start="20081211T170000Z" end="20081212T170000Z" work-start="20081212T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="20" type="FS"/>
+            <predecessor id="1" predecessor-id="26" type="FS"/>
           </predecessors>
         </task>
+        <task id="31" name="refinament" note="" work="720000" start="20081212T170000Z" end="20090106T170000Z" work-start="20081213T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="30" type="FS"/>
+          </predecessors>
+          <task id="32" name="recull feedback" note="" work="288000" start="20081212T170000Z" end="20081222T170000Z" work-start="20081213T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="33" name="estudi problemes/suggeriments" note="" work="144000" start="20081222T170000Z" end="20081227T170000Z" work-start="20081223T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="32" type="FS"/>
+            </predecessors>
+          </task>
+          <task id="34" name="implementaci&#xF3;" note="" work="288000" start="20081227T170000Z" end="20090106T170000Z" work-start="20081228T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="33" type="FS"/>
+            </predecessors>
+          </task>
+        </task>
       </task>
-      <task id="20" name="distribuci&#xF3;" note="" work="28800" start="20081231T170000Z" end="20090101T170000Z" work-start="20090101T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="35" name="iteraci&#xF3; 3 - factures" note="" work="1065600" start="20081205T170000Z" end="20081225T170000Z" work-start="20081206T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="19" type="FS"/>
+          <predecessor id="1" predecessor-id="26" type="FS"/>
+        </predecessors>
+        <task id="36" name="estudi" note="" work="115200" start="20081205T170000Z" end="20081209T170000Z" work-start="20081206T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="37" name="casos d'&#xFA;s" note="" work="28800" start="20081205T170000Z" end="20081206T170000Z" work-start="20081206T080000Z" percent-complete="23" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="38" name="diagrames seq&#xFC;&#xE8;ncia" note="" work="28800" start="20081206T170000Z" end="20081207T170000Z" work-start="20081207T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="37" type="FS"/>
+            </predecessors>
+          </task>
+          <task id="39" name="diagrama classes" note="" work="57600" start="20081207T170000Z" end="20081209T170000Z" work-start="20081208T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="38" type="FS"/>
+            </predecessors>
+          </task>
+        </task>
+        <task id="40" name="desenvolupament" note="" work="201600" start="20081209T170000Z" end="20081214T170000Z" work-start="20081210T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="36" type="FS"/>
+          </predecessors>
+          <task id="41" name="bbdd" note="" work="57600" start="20081209T170000Z" end="20081211T170000Z" work-start="20081210T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="42" name="interf&#xED;cie" note="" work="57600" start="20081209T170000Z" end="20081211T170000Z" work-start="20081210T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="43" name="funcionalitat" note="" work="86400" start="20081211T170000Z" end="20081214T170000Z" work-start="20081212T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="42" type="FS"/>
+              <predecessor id="1" predecessor-id="41" type="FS"/>
+            </predecessors>
+          </task>
+        </task>
+        <task id="44" name="distribuci&#xF3;" note="" work="28800" start="20081214T170000Z" end="20081215T170000Z" work-start="20081215T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="40" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="45" name="refinament" note="" work="720000" start="20081215T170000Z" end="20081225T170000Z" work-start="20081216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="44" type="FS"/>
+          </predecessors>
+          <task id="46" name="recull feedback" note="" work="288000" start="20081215T170000Z" end="20081225T170000Z" work-start="20081216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="47" name="estudi" note="" work="144000" start="20081215T170000Z" end="20081220T170000Z" work-start="20081216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="48" name="implementaci&#xF3;" note="" work="288000" start="20081215T170000Z" end="20081225T170000Z" work-start="20081216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="49" name="distribuci&#xF3;" note="" work="28800" start="20090106T170000Z" end="20090107T170000Z" work-start="20090107T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="34" type="FS"/>
+          <predecessor id="1" predecessor-id="45" type="FS"/>
         </predecessors>
       </task>
     </task>
   </tasks>
   <resource-groups/>
   <resources>
-    <resource id="1" name="a" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
-    <resource id="2" name="o" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource id="1" name="o" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource id="2" name="a" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
   </resources>
   <allocations>
-    <allocation task-id="12" resource-id="1" units="100"/>
-    <allocation task-id="4" resource-id="1" units="100"/>
-    <allocation task-id="5" resource-id="1" units="100"/>
+    <allocation task-id="42" resource-id="1" units="100"/>
+    <allocation task-id="28" resource-id="1" units="100"/>
+    <allocation task-id="14" resource-id="1" units="100"/>
+    <allocation task-id="3" resource-id="1" units="100"/>
+    <allocation task-id="41" resource-id="2" units="100"/>
+    <allocation task-id="27" resource-id="2" units="100"/>
     <allocation task-id="13" resource-id="2" units="100"/>
-    <allocation task-id="3" resource-id="2" units="100"/>
+    <allocation task-id="4" resource-id="2" units="100"/>
+    <allocation task-id="5" resource-id="2" units="100"/>
   </allocations>
 </project>
