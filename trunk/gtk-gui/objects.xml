@@ -1,0 +1,10 @@
+<objects>
+  <object type="gadpime.prova" palette-category="gadpime" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups />
+    <signals />
+  </object>
+  <object type="gadpime.provaginy" palette-category="gadpime" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups />
+    <signals />
+  </object>
+</objects>

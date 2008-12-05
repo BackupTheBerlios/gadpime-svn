@@ -1,0 +1,20 @@
+<Combine name="gadpime" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry build="True" name="gadpime" configuration="Debug" />
+      <Entry build="True" name="Packages" configuration="" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry build="True" name="gadpime" configuration="Release" />
+      <Entry build="True" name="Packages" configuration="" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="gadpime" single="True">
+    <Execute type="None" entry="gadpime" />
+    <Execute type="None" entry="Packages" />
+  </StartMode>
+  <Entries>
+    <Entry filename="gadpime.mdp" />
+    <Entry filename="Packages.mdse" />
+  </Entries>
+</Combine>

@@ -1,0 +1,19 @@
+﻿<UserCombinePreferences version="1.0" filename="/home/oscar/uoc/projecte/gadpime2/gadpime/gadpime.mds">
+  <Files />
+  <Views>
+    <ViewMemento id="ProjectPad">
+      <Node expanded="True">
+        <Node name="gadpime" expanded="True">
+          <Node name="ClientWindow.cs" selected="True" />
+        </Node>
+      </Node>
+    </ViewMemento>
+    <ViewMemento id="ClassPad">
+      <Node expanded="True" />
+    </ViewMemento>
+  </Views>
+  <Properties>
+    <Property key="ActiveWindow" value="" />
+    <Property key="ActiveConfiguration" value="Debug" />
+  </Properties>
+</UserCombinePreferences>
