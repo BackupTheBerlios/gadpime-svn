@@ -61,6 +61,7 @@ namespace gadpime {
             this.WindowPosition = ((Gtk.WindowPosition)(2));
             // Container child gadpime.ClientSearchWindow.Gtk.Container+ContainerChild
             this.vbox1 = new Gtk.VBox();
+            this.vbox1.Name = "vbox1";
             this.vbox1.Spacing = 6;
             // Container child vbox1.Gtk.Box+BoxChild
             w1.AddUiFromString("<ui><menubar name='menubar1'><menu action='ArchivoAction'><menuitem action='SalirAction'/></menu><menu><menuitem/><menuitem/></menu></menubar></ui>");

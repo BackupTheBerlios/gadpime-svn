@@ -23,11 +23,29 @@ namespace gadpime {
         
         private Gtk.Action BuscarAction;
         
+        private Gtk.Action AyudaAction;
+        
+        private Gtk.Action AcercaDeAction;
+        
         private Gtk.VBox vbox1;
         
         private Gtk.MenuBar menubar1;
         
+        private Gtk.HBox hbox1;
+        
+        private Gtk.VBox vboxClients;
+        
         private Gtk.Label label1;
+        
+        private Gtk.Button buttonClientLlista;
+        
+        private Gtk.Button buttonClientBusca;
+        
+        private Gtk.Button buttonClientNou;
+        
+        private Gtk.VBox vboxSolicituts;
+        
+        private Gtk.Label label2;
         
         protected virtual void Build() {
             Stetic.Gui.Initialize(this);
@@ -49,6 +67,12 @@ namespace gadpime {
             this.BuscarAction = new Gtk.Action("BuscarAction", Mono.Unix.Catalog.GetString("Buscar"), null, null);
             this.BuscarAction.ShortLabel = Mono.Unix.Catalog.GetString("Buscar");
             w2.Add(this.BuscarAction, null);
+            this.AyudaAction = new Gtk.Action("AyudaAction", Mono.Unix.Catalog.GetString("Ayuda"), null, null);
+            this.AyudaAction.ShortLabel = Mono.Unix.Catalog.GetString("Ayuda");
+            w2.Add(this.AyudaAction, null);
+            this.AcercaDeAction = new Gtk.Action("AcercaDeAction", Mono.Unix.Catalog.GetString("Acerca de..."), null, null);
+            this.AcercaDeAction.ShortLabel = Mono.Unix.Catalog.GetString("Acerca de...");
+            w2.Add(this.AcercaDeAction, null);
             w1.InsertActionGroup(w2, 0);
             this.AddAccelGroup(w1.AccelGroup);
             this.Name = "gadpime.MainWindow";
@@ -56,9 +80,10 @@ namespace gadpime {
             this.WindowPosition = ((Gtk.WindowPosition)(2));
             // Container child gadpime.MainWindow.Gtk.Container+ContainerChild
             this.vbox1 = new Gtk.VBox();
+            this.vbox1.Name = "vbox1";
             this.vbox1.Spacing = 6;
             // Container child vbox1.Gtk.Box+BoxChild
-            w1.AddUiFromString("<ui><menubar name='menubar1'><menu action='ArchivoAction'><menuitem action='SalirAction'/></menu><menu action='ClientesAction'><menuitem action='NuevoAction'/><menuitem action='BuscarAction'/></menu></menubar></ui>");
+            w1.AddUiFromString("<ui><menubar name='menubar1'><menu action='ArchivoAction'><menuitem action='SalirAction'/></menu><menu action='ClientesAction'><menuitem action='NuevoAction'/><menuitem action='BuscarAction'/></menu><menu action='AyudaAction'><menuitem action='AcercaDeAction'/></menu></menubar></ui>");
             this.menubar1 = ((Gtk.MenuBar)(w1.GetWidget("/menubar1")));
             this.menubar1.Name = "menubar1";
             this.vbox1.Add(this.menubar1);
@@ -67,25 +92,99 @@ namespace gadpime {
             w3.Expand = false;
             w3.Fill = false;
             // Container child vbox1.Gtk.Box+BoxChild
+            this.hbox1 = new Gtk.HBox();
+            this.hbox1.Name = "hbox1";
+            this.hbox1.Homogeneous = true;
+            this.hbox1.Spacing = 6;
+            this.hbox1.BorderWidth = ((uint)(2));
+            // Container child hbox1.Gtk.Box+BoxChild
+            this.vboxClients = new Gtk.VBox();
+            this.vboxClients.Name = "vboxClients";
+            this.vboxClients.Spacing = 6;
+            // Container child vboxClients.Gtk.Box+BoxChild
             this.label1 = new Gtk.Label();
             this.label1.Name = "label1";
-            this.label1.LabelProp = Mono.Unix.Catalog.GetString("utilitza el menu");
-            this.vbox1.Add(this.label1);
-            Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.vbox1[this.label1]));
-            w4.Position = 1;
+            this.label1.LabelProp = Mono.Unix.Catalog.GetString("Clientes");
+            this.vboxClients.Add(this.label1);
+            Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.vboxClients[this.label1]));
+            w4.Position = 0;
             w4.Expand = false;
             w4.Fill = false;
+            // Container child vboxClients.Gtk.Box+BoxChild
+            this.buttonClientLlista = new Gtk.Button();
+            this.buttonClientLlista.CanFocus = true;
+            this.buttonClientLlista.Name = "buttonClientLlista";
+            this.buttonClientLlista.UseUnderline = true;
+            this.buttonClientLlista.Label = Mono.Unix.Catalog.GetString("lista");
+            this.vboxClients.Add(this.buttonClientLlista);
+            Gtk.Box.BoxChild w5 = ((Gtk.Box.BoxChild)(this.vboxClients[this.buttonClientLlista]));
+            w5.Position = 1;
+            w5.Expand = false;
+            w5.Fill = false;
+            // Container child vboxClients.Gtk.Box+BoxChild
+            this.buttonClientBusca = new Gtk.Button();
+            this.buttonClientBusca.CanFocus = true;
+            this.buttonClientBusca.Name = "buttonClientBusca";
+            this.buttonClientBusca.UseUnderline = true;
+            this.buttonClientBusca.Label = Mono.Unix.Catalog.GetString("busca");
+            this.vboxClients.Add(this.buttonClientBusca);
+            Gtk.Box.BoxChild w6 = ((Gtk.Box.BoxChild)(this.vboxClients[this.buttonClientBusca]));
+            w6.Position = 2;
+            w6.Expand = false;
+            w6.Fill = false;
+            // Container child vboxClients.Gtk.Box+BoxChild
+            this.buttonClientNou = new Gtk.Button();
+            this.buttonClientNou.CanFocus = true;
+            this.buttonClientNou.Name = "buttonClientNou";
+            this.buttonClientNou.UseUnderline = true;
+            this.buttonClientNou.Label = Mono.Unix.Catalog.GetString("nuevo");
+            this.vboxClients.Add(this.buttonClientNou);
+            Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.vboxClients[this.buttonClientNou]));
+            w7.Position = 3;
+            w7.Expand = false;
+            w7.Fill = false;
+            this.hbox1.Add(this.vboxClients);
+            Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.hbox1[this.vboxClients]));
+            w8.Position = 0;
+            w8.Expand = false;
+            w8.Fill = false;
+            // Container child hbox1.Gtk.Box+BoxChild
+            this.vboxSolicituts = new Gtk.VBox();
+            this.vboxSolicituts.Name = "vboxSolicituts";
+            this.vboxSolicituts.Spacing = 6;
+            // Container child vboxSolicituts.Gtk.Box+BoxChild
+            this.label2 = new Gtk.Label();
+            this.label2.Name = "label2";
+            this.label2.LabelProp = Mono.Unix.Catalog.GetString("Solicitudes");
+            this.vboxSolicituts.Add(this.label2);
+            Gtk.Box.BoxChild w9 = ((Gtk.Box.BoxChild)(this.vboxSolicituts[this.label2]));
+            w9.Position = 0;
+            w9.Expand = false;
+            w9.Fill = false;
+            this.hbox1.Add(this.vboxSolicituts);
+            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.hbox1[this.vboxSolicituts]));
+            w10.Position = 1;
+            w10.Expand = false;
+            w10.Fill = false;
+            this.vbox1.Add(this.hbox1);
+            Gtk.Box.BoxChild w11 = ((Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
+            w11.Position = 1;
+            w11.Expand = false;
+            w11.Fill = false;
             this.Add(this.vbox1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
-            this.DefaultWidth = 421;
-            this.DefaultHeight = 300;
+            this.DefaultWidth = 329;
+            this.DefaultHeight = 202;
             this.Show();
             this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
             this.SalirAction.Activated += new System.EventHandler(this.Quit);
             this.NuevoAction.Activated += new System.EventHandler(this.ClientNew);
             this.BuscarAction.Activated += new System.EventHandler(this.ClientSearch);
+            this.AcercaDeAction.Activated += new System.EventHandler(this.About);
+            this.buttonClientBusca.Clicked += new System.EventHandler(this.ClientSearch);
+            this.buttonClientNou.Clicked += new System.EventHandler(this.ClientNew);
         }
     }
 }

@@ -1,11 +1,16 @@
 ﻿<UserCombinePreferences version="1.0" filename="/home/oscar/uoc/projecte/gadpime2/gadpime/gadpime.mds">
-  <Files />
+  <Files>
+    <File name="Welcome" />
+    <File name="MainWindow.cs" line="1" column="1" />
+  </Files>
   <Views>
     <ViewMemento id="ProjectPad">
       <Node expanded="True">
         <Node name="gadpime" expanded="True">
-          <Node name="ClientWindow.cs" selected="True" />
+          <Node name="UserInterface" expanded="True" />
+          <Node name="MainWindow.cs" selected="True" />
         </Node>
+        <Node name="Packages" expanded="True" />
       </Node>
     </ViewMemento>
     <ViewMemento id="ClassPad">
@@ -13,7 +18,7 @@
     </ViewMemento>
   </Views>
   <Properties>
-    <Property key="ActiveWindow" value="" />
+    <Property key="ActiveWindow" value="/home/oscar/uoc/projecte/gadpime2/gadpime/MainWindow.cs" />
     <Property key="ActiveConfiguration" value="Debug" />
   </Properties>
 </UserCombinePreferences>

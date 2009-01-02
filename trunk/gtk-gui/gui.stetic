@@ -4,7 +4,7 @@
     <images-root-path>..</images-root-path>
     <target-gtk-version>2.12.0</target-gtk-version>
   </configuration>
-  <widget class="Gtk.Window" id="gadpime.MainWindow" design-size="421 300">
+  <widget class="Gtk.Window" id="gadpime.MainWindow" design-size="329 202">
     <action-group name="Default">
       <action id="ArchivoAction">
         <property name="Type">Action</property>
@@ -35,6 +35,17 @@
         <property name="ShortLabel" translatable="yes">Buscar</property>
         <signal name="Activated" handler="ClientSearch" />
       </action>
+      <action id="AyudaAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Ayuda</property>
+        <property name="ShortLabel" translatable="yes">Ayuda</property>
+      </action>
+      <action id="AcercaDeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Acerca de...</property>
+        <property name="ShortLabel" translatable="yes">Acerca de...</property>
+        <signal name="Activated" handler="About" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
@@ -55,6 +66,9 @@
                 <node type="Menuitem" action="NuevoAction" />
                 <node type="Menuitem" action="BuscarAction" />
               </node>
+              <node type="Menu" action="AyudaAction">
+                <node type="Menuitem" action="AcercaDeAction" />
+              </node>
             </node>
           </widget>
           <packing>
@@ -65,9 +79,115 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Label" id="label1">
+          <widget class="Gtk.HBox" id="hbox1">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">utilitza el menu</property>
+            <property name="Homogeneous">True</property>
+            <property name="Spacing">6</property>
+            <property name="BorderWidth">2</property>
+            <child>
+              <widget class="Gtk.VBox" id="vboxClients">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Label" id="label1">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Clientes</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="buttonClientLlista">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">lista</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="buttonClientBusca">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">busca</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="ClientSearch" />
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="buttonClientNou">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">nuevo</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="ClientNew" />
+                  </widget>
+                  <packing>
+                    <property name="Position">3</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.VBox" id="vboxSolicituts">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Label" id="label2">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Solicitudes</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
           </widget>
           <packing>
             <property name="Position">1</property>
@@ -835,86 +955,46 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Bin" id="gadpime.prova" design-size="300 300">
+  <widget class="Gtk.Window" id="gadpime.AboutWindow" design-size="482 358">
     <property name="MemberName" />
+    <property name="Title" translatable="yes">About</property>
+    <property name="WindowPosition">CenterOnParent</property>
     <child>
       <widget class="Gtk.HBox" id="hbox1">
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.Button" id="button2">
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
             <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">button2</property>
-            <property name="UseUnderline">True</property>
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="textview2">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Text" translatable="yes">GAdPIME
+
+Copyright (C) 2009 Oscar López
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</property>
+              </widget>
+            </child>
           </widget>
           <packing>
             <property name="Position">0</property>
             <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Arrow" id="arrow1">
-            <property name="MemberName" />
-          </widget>
-          <packing>
-            <property name="Position">1</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.ColorButton" id="colorbutton1">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Events">ButtonMotionMask, ButtonPressMask, ButtonReleaseMask</property>
-            <property name="Alpha">-1</property>
-          </widget>
-          <packing>
-            <property name="Position">2</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-      </widget>
-    </child>
-  </widget>
-  <widget class="Gtk.Bin" id="gadpime.provaginy" design-size="300 300">
-    <property name="MemberName" />
-    <child>
-      <widget class="Gtk.Frame" id="frame1">
-        <property name="MemberName" />
-        <property name="ShadowType">None</property>
-        <child>
-          <widget class="Gtk.Alignment" id="GtkAlignment">
-            <property name="MemberName" />
-            <property name="Xalign">0</property>
-            <property name="Yalign">0</property>
-            <property name="LeftPadding">12</property>
-            <child>
-              <widget class="Gtk.Button" id="button1">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">button1</property>
-                <property name="UseUnderline">True</property>
-              </widget>
-            </child>
-          </widget>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="GtkLabel1">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">&lt;b&gt;frame1&lt;/b&gt;</property>
-            <property name="UseMarkup">True</property>
-          </widget>
-          <packing>
-            <property name="type">label_item</property>
           </packing>
         </child>
       </widget>
