@@ -1,7 +1,7 @@
 <CombineEntry name="Packages" fileversion="2.0" ctype="PackagingProject">
   <Packages>
-    <Package name="Binaris Windows">
-      <Builder rootEntry="gadpime.mds" targetFile="gadpime-windows.tar.gz" platform="Windows" ctype="BinariesZipPackageBuilder">
+    <Package name="MonoDevelop Project Model Sources">
+      <Builder rootEntry="gadpime.mds" targetFile="gadpime-src-0.1.1.zip" format="MonoDevelop.Projects.MonoDevelopFileFormat" ctype="SourcesZipPackageBuilder">
         <ChildEntries>
           <Entry>gadpime.mdp</Entry>
         </ChildEntries>
